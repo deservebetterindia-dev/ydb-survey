@@ -57,7 +57,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
             <div className="text-center p-6 bg-gray-800 rounded-lg card-hover-effect">
               <span className="text-7xl sm:text-8xl font-black block" style={{ color: boldAccent }}>1/5</span>
-              <p className="mt-4 text-lg text-gray-400">Indian women has PCOS. Most don't know it.</p>
+              <p className="mt-4 text-lg text-gray-400">Indian women has PCOS. Most don&apos;t know it.</p>
             </div>
             <div className="text-center p-6 bg-gray-800 rounded-lg card-hover-effect">
               <span className="text-7xl sm:text-8xl font-black block" style={{ color: boldAccent }}>70%</span>
@@ -106,7 +106,7 @@ export default function Home() {
                 className="font-bold py-5 px-16 sm:px-20 text-2xl rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
                 style={{ backgroundColor: boldAccent, color: 'white' }}
               >
-                I'M READY
+                I&apos;M READY
               </button>
             </Link>
           </div>
@@ -116,9 +116,9 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 bg-gray-900 text-center">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gray-500 text-sm">This is more than a survey. It's a movement.</p>
+          <p className="text-gray-500 text-sm">This is more than a survey. It&apos;s a movement.</p>
           <p className="text-xs text-gray-600 mt-4">
-            All data is anonymized and used for research and advocacy to improve women's healthcare in India.
+            All data is anonymized and used for research and advocacy to improve women&apos;s healthcare in India.
           </p>
         </div>
       </footer>
