@@ -1,0 +1,483 @@
+{
+  "survey": {
+    "title": "PCOS Sisters Survey - Share Your Journey",
+    "sections": [
+      {
+        "sectionId": 1,
+        "sectionTitle": "Getting to Know the Beautiful You",
+        "questions": [
+          {
+            "questionId": "age",
+            "question": "What stage of life are you celebrating right now?",
+            "required": true,
+            "type": "select",
+            "options": [
+              { "value": "under-18", "label": "Discovering myself (Under 18)" },
+              { "value": "18-22", "label": "College & Dreams (18-22)" },
+              { "value": "23-27", "label": "Building my path (23-27)" },
+              { "value": "28-32", "label": "Thriving phase (28-32)" },
+              { "value": "33-37", "label": "Confident years (33-37)" },
+              { "value": "38-42", "label": "Wisdom era (38-42)" },
+              { "value": "43-47", "label": "Golden phase (43-47)" },
+              { "value": "48+", "label": "Living my best life (48+)" }
+            ]
+          },
+          {
+            "questionId": "location",
+            "question": "Which beautiful part of India do you call home?",
+            "required": true,
+            "type": "text",
+            "placeholder": "e.g., Mumbai, Maharashtra"
+          },
+          {
+            "questionId": "maritalStatus",
+            "question": "Your relationship status",
+            "required": true,
+            "type": "radio",
+            "options": [
+              { "value": "single", "label": "Flying solo & loving it" },
+              { "value": "married", "label": "Married & blessed" },
+              { "value": "divorced", "label": "Independent & strong" },
+              { "value": "prefer-not", "label": "I'd rather not share" }
+            ]
+          },
+          {
+            "questionId": "education",
+            "question": "Your education journey",
+            "required": true,
+            "type": "select",
+            "options": [
+              { "value": "high-school", "label": "High School graduate" },
+              { "value": "undergraduate", "label": "Bachelor's degree (pursuing/completed)" },
+              { "value": "postgraduate", "label": "Master's degree (pursuing/completed)" },
+              { "value": "professional", "label": "Professional certification" },
+              { "value": "phd", "label": "PhD/Doctorate" }
+            ]
+          },
+          {
+            "questionId": "occupation",
+            "question": "How do you spend your days?",
+            "required": true,
+            "type": "select",
+            "options": [
+              { "value": "student", "label": "Student (Learning & growing)" },
+              { "value": "corporate", "label": "Corporate professional" },
+              { "value": "entrepreneur", "label": "Entrepreneur/Business owner" },
+              { "value": "homemaker", "label": "Homemaker (The ultimate multitasker!)" },
+              { "value": "healthcare", "label": "Healthcare professional" },
+              { "value": "other", "label": "Something else amazing" }
+            ]
+          },
+          {
+            "questionId": "income",
+            "question": "Your family's monthly income range",
+            "required": true,
+            "type": "select",
+            "options": [
+              { "value": "below-25000", "label": "Below ₹25,000" },
+              { "value": "25000-50000", "label": "₹25,000 - ₹50,000" },
+              { "value": "50001-100000", "label": "₹50,001 - ₹1,00,000" },
+              { "value": "100001-200000", "label": "₹1,00,001 - ₹2,00,000" },
+              { "value": "200001-500000", "label": "₹2,00,001 - ₹5,00,000" },
+              { "value": "above-500000", "label": "Above ₹5,00,000" },
+              { "value": "prefer-not", "label": "I'd rather not share" }
+            ]
+          }
+        ]
+      },
+      {
+        "sectionId": 2,
+        "sectionTitle": "Your PCOS Discovery Story",
+        "questions": [
+          {
+            "questionId": "diagnosis",
+            "question": "Has a doctor officially confirmed PCOS/PCOD for you?",
+            "required": true,
+            "type": "radio",
+            "options": [
+              { "value": "pcos", "label": "Yes, diagnosed with PCOS" },
+              { "value": "pcod", "label": "Yes, diagnosed with PCOD" },
+              { "value": "suspect", "label": "Not yet, but I strongly suspect I have it" },
+              { "value": "learning", "label": "I'm here to learn and understand" },
+              { "value": "dont-know", "label": "I'm confused about PCOS vs PCOD" }
+            ]
+          },
+          {
+            "questionId": "diagnosisTime",
+            "question": "If diagnosed, when did you receive this news?",
+            "required": false,
+            "type": "select",
+            "options": [
+              { "value": "less-6-months", "label": "Very recently (Less than 6 months ago)" },
+              { "value": "6-months-1-year", "label": "This past year (6 months - 1 year ago)" },
+              { "value": "1-3-years", "label": "A few years back (1-3 years ago)" },
+              { "value": "3-5-years", "label": "Some time ago (3-5 years ago)" },
+              { "value": "more-5-years", "label": "Long ago (More than 5 years ago)" },
+              { "value": "not-applicable", "label": "Not applicable to me" }
+            ]
+          },
+          {
+            "questionId": "initialSymptoms",
+            "question": "What initially made you seek medical help? (Choose all that feel true)",
+            "required": false,
+            "type": "checkbox",
+            "options": [
+              { "value": "irregular-periods", "label": "My periods became unpredictable" },
+              { "value": "weight-gain", "label": "Unexpected weight changes" },
+              { "value": "hair-growth", "label": "Unwanted hair growth" },
+              { "value": "hair-loss", "label": "Hair thinning or loss" },
+              { "value": "acne", "label": "Persistent skin issues" },
+              { "value": "fertility", "label": "Challenges with conceiving" },
+              { "value": "mood-changes", "label": "Emotional ups and downs" },
+              { "value": "family-suggested", "label": "A loved one suggested I get checked" },
+              { "value": "routine-checkup", "label": "Discovered during routine health check" }
+            ]
+          },
+          {
+            "questionId": "doctorsConsulted",
+            "question": "How many healthcare providers did you visit before getting clear answers?",
+            "required": false,
+            "type": "radio",
+            "options": [
+              { "value": "1", "label": "Just one - I was fortunate!" },
+              { "value": "2-3", "label": "2-3 doctors" },
+              { "value": "4-5", "label": "4-5 doctors" },
+              { "value": "more-5", "label": "More than 5 - it's been a journey" },
+              { "value": "still-searching", "label": "Still searching for the right answers" },
+              { "value": "not-applicable-docs", "label": "Haven't started this journey yet" }
+            ]
+          }
+        ]
+      },
+      {
+        "sectionId": 3,
+        "sectionTitle": "How PCOS Shows Up in Your Beautiful Life",
+        "questions": [
+          {
+            "questionId": "currentSymptoms",
+            "question": "Which of these experiences resonate with your current journey? (Select all that apply)",
+            "required": false,
+            "type": "checkbox",
+            "options": [
+              { "value": "irregular-cycles", "label": "My menstrual cycle has its own schedule (more than 35 days apart)" },
+              { "value": "absent-periods", "label": "My periods take long breaks (3+ months missing)" },
+              { "value": "heavy-periods", "label": "When they come, they're intense and painful" },
+              { "value": "weight-gain-current", "label": "My body gained weight without explanation" },
+              { "value": "difficulty-losing", "label": "Weight loss feels like an uphill battle" },
+              { "value": "excessive-hair", "label": "Unwanted hair growth on face or body" },
+              { "value": "hair-thinning", "label": "My beautiful hair is thinning" },
+              { "value": "severe-acne", "label": "Stubborn acne, especially around jawline" },
+              { "value": "dark-patches", "label": "Dark skin patches (neck, underarms, groin area)" },
+              { "value": "mood-swings", "label": "Emotional roller coaster days" },
+              { "value": "depression", "label": "Feelings of sadness or anxiety" },
+              { "value": "fatigue", "label": "Constant tiredness, low energy" },
+              { "value": "sleep-problems", "label": "Sleep doesn't come easily" },
+              { "value": "sugar-cravings", "label": "Intense cravings for sweets" },
+              { "value": "concentration", "label": "Brain fog and concentration challenges" },
+              { "value": "body-image", "label": "Struggling with self-confidence" }
+            ]
+          },
+          {
+            "questionId": "lifeImpact",
+            "question": "How much do these experiences impact your daily life?",
+            "required": true,
+            "type": "range",
+            "min": 1,
+            "max": 10,
+            "default": 5,
+            "scaleLabels": {
+              "min": "1 - Life goes on normally",
+              "max": "10 - Affects everything I do"
+            }
+          },
+          {
+            "questionId": "professionalImpact",
+            "question": "How has this impacted your professional or academic life? (Select all that apply)",
+            "required": false,
+            "type": "checkbox",
+            "options": [
+              { "value": "missed-work", "label": "I've missed work/college due to symptoms" },
+              { "value": "reduced-productivity", "label": "My productivity isn't what it used to be" },
+              { "value": "avoided-events", "label": "I skip social or professional events" },
+              { "value": "changed-goals", "label": "I've adjusted my career aspirations" },
+              { "value": "discrimination", "label": "I've faced bias or discrimination" },
+              { "value": "medical-leave", "label": "I've needed medical leave" },
+              { "value": "no-impact-work", "label": "No significant impact on my work" }
+            ]
+          },
+          {
+            "questionId": "relationshipImpact",
+            "question": "How has this affected your relationships and social life? (Select all that apply)",
+            "required": false,
+            "type": "checkbox",
+            "options": [
+              { "value": "strained-romantic", "label": "My romantic relationships have been affected" },
+              { "value": "avoided-dating", "label": "I avoid dating or new relationships" },
+              { "value": "family-misunderstanding", "label": "My family doesn't fully understand" },
+              { "value": "friends-dismissive", "label": "Friends sometimes dismiss my concerns" },
+              { "value": "marital-problems", "label": "It's created challenges in my marriage" },
+              { "value": "fertility-concerns", "label": "Fertility worries affect my relationship decisions" },
+              { "value": "no-impact-relationships", "label": "My relationships remain strong and supportive" }
+            ]
+          }
+        ]
+      },
+      {
+        "sectionId": 4,
+        "sectionTitle": "Your Healing & Wellness Journey",
+        "questions": [
+          {
+            "questionId": "treatments",
+            "question": "What approaches have you tried on your healing path? (Select all that apply)",
+            "required": false,
+            "type": "checkbox",
+            "options": [
+              { "value": "birth-control", "label": "Birth control pills" },
+              { "value": "metformin", "label": "Metformin for insulin resistance" },
+              { "value": "hormonal-meds", "label": "Other hormonal medications" },
+              { "value": "weight-loss-meds", "label": "Weight management medications" },
+              { "value": "anti-androgen", "label": "Anti-androgen medications" },
+              { "value": "fertility-treatments", "label": "Fertility treatments" },
+              { "value": "lifestyle-changes", "label": "Lifestyle modifications (diet & exercise)" },
+              { "value": "alternative-medicine", "label": "Alternative medicine (Ayurveda, homeopathy)" },
+              { "value": "supplements", "label": "Natural supplements (inositol, vitamin D, etc.)" },
+              { "value": "therapy", "label": "Counseling or therapy" },
+              { "value": "no-treatment", "label": "I haven't started any treatment yet" }
+            ]
+          },
+          {
+            "questionId": "treatmentSatisfaction",
+            "question": "How satisfied are you with your current treatment approach?",
+            "required": false,
+            "type": "radio",
+            "options": [
+              { "value": "very-satisfied", "label": "Very satisfied - my symptoms are well managed" },
+              { "value": "somewhat-satisfied", "label": "Somewhat satisfied - I see some improvement" },
+              { "value": "neutral", "label": "Neutral - not much change" },
+              { "value": "somewhat-dissatisfied", "label": "Somewhat dissatisfied - limited improvement" },
+              { "value": "very-dissatisfied", "label": "Very dissatisfied - no improvement or worsened" },
+              { "value": "not-receiving", "label": "I'm not currently receiving treatment" }
+            ]
+          },
+          {
+            "questionId": "challenges",
+            "question": "What are your biggest challenges in managing PCOS? (Select all that apply)",
+            "required": false,
+            "type": "checkbox",
+            "options": [
+              { "value": "doctor-awareness", "label": "Doctors don't seem well-informed about PCOS" },
+              { "value": "expensive-treatments", "label": "Treatments are too expensive" },
+              { "value": "side-effects", "label": "Medication side effects are troublesome" },
+              { "value": "conflicting-advice", "label": "I get conflicting advice from different doctors" },
+              { "value": "family-support", "label": "Lack of understanding from family" },
+              { "value": "time-constraints", "label": "No time for lifestyle changes" },
+              { "value": "information-overload", "label": "Too much conflicting information online" },
+              { "value": "social-stigma", "label": "Social stigma and embarrassment" },
+              { "value": "diet-guidance", "label": "No clear guidance on diet and exercise" },
+              { "value": "mental-health", "label": "The emotional and mental health impact" }
+            ]
+          },
+          {
+            "questionId": "monthlyExpenses",
+            "question": "How much do you spend monthly on PCOS management?",
+            "required": true,
+            "type": "select",
+            "options": [
+              { "value": "0", "label": "₹0 (no current treatment)" },
+              { "value": "1-1000", "label": "₹1-1,000" },
+              { "value": "1001-3000", "label": "₹1,001-3,000" },
+              { "value": "3001-5000", "label": "₹3,001-5,000" },
+              { "value": "5001-10000", "label": "₹5,001-10,000" },
+              { "value": "more-10000", "label": "More than ₹10,000" }
+            ]
+          }
+        ]
+      },
+      {
+        "sectionId": 5,
+        "sectionTitle": "Your Personal Story Timeline",
+        "questions": [
+          {
+            "questionId": "firstSymptoms",
+            "question": "When did you first notice something felt different?",
+            "required": false,
+            "type": "radio",
+            "options": [
+              { "value": "teenage", "label": "During my teenage years (13-18)" },
+              { "value": "early-twenties", "label": "Early twenties (19-25)" },
+              { "value": "late-twenties", "label": "Late twenties (26-30)" },
+              { "value": "after-30", "label": "After turning 30" },
+              { "value": "after-marriage", "label": "After marriage" },
+              { "value": "after-childbirth", "label": "After having a baby" },
+              { "value": "cant-pinpoint", "label": "I can't pinpoint exactly when" }
+            ]
+          },
+          {
+            "questionId": "triggers",
+            "question": "What do you think might have triggered or worsened your symptoms? (Select all that apply)",
+            "required": false,
+            "type": "checkbox",
+            "options": [
+              { "value": "stress", "label": "Stress (work or personal life)" },
+              { "value": "weight-gain-trigger", "label": "Significant weight gain" },
+              { "value": "poor-diet", "label": "Changes in eating habits" },
+              { "value": "sedentary", "label": "More sedentary lifestyle" },
+              { "value": "hormonal-changes", "label": "Natural hormonal changes (puberty, pregnancy)" },
+              { "value": "medications", "label": "Certain medications" },
+              { "value": "family-history", "label": "Family history/genetics" },
+              { "value": "environmental", "label": "Environmental factors" },
+              { "value": "dont-know-triggers", "label": "I honestly don't know" }
+            ]
+          },
+          {
+            "questionId": "dietChanges",
+            "question": "How has your relationship with food evolved?",
+            "required": false,
+            "type": "radio",
+            "options": [
+              { "value": "significantly-improved", "label": "Significantly improved - I follow a structured eating plan" },
+              { "value": "somewhat-improved", "label": "Somewhat improved - I'm making healthier choices" },
+              { "value": "tried-struggled", "label": "I've tried many approaches but struggle to maintain them" },
+              { "value": "no-changes", "label": "No significant changes in my eating habits" },
+              { "value": "gotten-worse", "label": "It's gotten more challenging - stress eating or restrictions" },
+              { "value": "professional-help", "label": "I work with a nutritionist or dietitian" }
+            ]
+          },
+          {
+            "questionId": "exerciseJourney",
+            "question": "How has your relationship with movement and exercise changed?",
+            "required": false,
+            "type": "radio",
+            "options": [
+              { "value": "very-active", "label": "Very active - I have a consistent routine" },
+              { "value": "moderately-active", "label": "Moderately active - I exercise regularly" },
+              { "value": "trying-consistent", "label": "Trying to be more consistent" },
+              { "value": "struggle-motivation", "label": "I struggle with motivation and energy" },
+              { "value": "limited-health", "label": "Health issues limit my activity" },
+              { "value": "no-exercise", "label": "I don't currently exercise" }
+            ]
+          }
+        ]
+      },
+      {
+        "sectionId": 6,
+        "sectionTitle": "Dreams, Support & Information Needs",
+        "questions": [
+          {
+            "questionId": "informationSources",
+            "question": "Where do you currently get information about PCOS? (Select all that apply)",
+            "required": false,
+            "type": "checkbox",
+            "options": [
+              { "value": "doctors", "label": "Healthcare providers" },
+              { "value": "google-search", "label": "Google searches" },
+              { "value": "social-media", "label": "Instagram, YouTube, Facebook" },
+              { "value": "online-forums", "label": "Online forums and communities" },
+              { "value": "medical-websites", "label": "Medical websites" },
+              { "value": "books", "label": "Books and research papers" },
+              { "value": "friends-family", "label": "Friends and family" },
+              { "value": "support-groups", "label": "PCOS support groups" },
+              { "value": "apps", "label": "Health apps" },
+              { "value": "nowhere", "label": "I don't actively seek information" }
+            ]
+          },
+          {
+            "questionId": "supportSystem",
+            "question": "How strong is your support system in managing PCOS?",
+            "required": false,
+            "type": "range",
+            "min": 1,
+            "max": 10,
+            "default": 5,
+            "scaleLabels": {
+              "min": "1 - I feel alone in this journey",
+              "max": "10 - I have amazing support"
+            }
+          },
+          {
+            "questionId": "biggestConcerns",
+            "question": "What are your biggest concerns about PCOS for the future? (Select all that apply)",
+            "required": false,
+            "type": "checkbox",
+            "options": [
+              { "value": "fertility-future", "label": "Future fertility and pregnancy" },
+              { "value": "weight-management", "label": "Long-term weight management" },
+              { "value": "diabetes-risk", "label": "Developing diabetes" },
+              { "value": "heart-health", "label": "Heart disease risk" },
+              { "value": "mental-health-long", "label": "Mental health impact" },
+              { "value": "appearance-changes", "label": "Physical appearance changes" },
+              { "value": "treatment-costs", "label": "Rising treatment costs" },
+              { "value": "finding-specialists", "label": "Finding knowledgeable doctors" },
+              { "value": "career-impact", "label": "Career and life goal impact" },
+              { "value": "relationships-future", "label": "Impact on relationships" },
+              { "value": "passing-children", "label": "Possibly passing it to my children" },
+              { "value": "not-concerned", "label": "I try not to worry about the future" }
+            ]
+          },
+          {
+            "questionId": "mostNeeded",
+            "question": "What would help you MOST right now? (Choose your top 3)",
+            "required": false,
+            "type": "checkbox",
+            "maxSelections": 3,
+            "options": [
+              { "value": "expert-doctor", "label": "Access to PCOS specialist doctors" },
+              { "value": "affordable-treatment", "label": "More affordable treatment options" },
+              { "value": "personalized-diet", "label": "Personalized diet and nutrition guidance" },
+              { "value": "exercise-program", "label": "Tailored exercise programs" },
+              { "value": "mental-health-support", "label": "Mental health and emotional support" },
+              { "value": "peer-support", "label": "Connection with other women with PCOS" },
+              { "value": "reliable-information", "label": "Trustworthy, science-based information" },
+              { "value": "tracking-tools", "label": "Better symptom and cycle tracking tools" },
+              { "value": "family-education", "label": "Educational resources for my family" },
+              { "value": "workplace-understanding", "label": "Better workplace understanding and policies" },
+              { "value": "natural-alternatives", "label": "Natural and holistic treatment options" },
+              { "value": "fertility-guidance", "label": "Fertility and family planning support" }
+            ]
+          },
+          {
+            "questionId": "dreamOutcome",
+            "question": "If you could wave a magic wand, what would your ideal life with PCOS look like?",
+            "required": false,
+            "type": "textarea",
+            "placeholder": "Share your hopes and dreams... What would make you feel most empowered and confident?"
+          },
+          {
+            "questionId": "messageToOthers",
+            "question": "What message would you want to share with other women who might be going through similar experiences?",
+            "required": false,
+            "type": "textarea",
+            "placeholder": "Your words of encouragement, wisdom, or solidarity..."
+          },
+          {
+            "questionId": "contactEmail",
+            "question": "If you'd like to stay connected and receive updates about resources and community initiatives (completely optional):",
+            "required": false,
+            "type": "email",
+            "placeholder": "your.email@example.com"
+          },
+          {
+            "questionId": "shareStory",
+            "question": "Would you be open to sharing your story to help other women? (Your identity would always remain protected)",
+            "required": false,
+            "type": "radio",
+            "options": [
+              { "value": "yes-definitely", "label": "Yes, definitely! I want to help others" },
+              { "value": "maybe-later", "label": "Maybe in the future" },
+              { "value": "anonymously-only", "label": "Only if it's completely anonymous" },
+              { "value": "not-interested", "label": "I'd prefer not to" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "totalQuestions": 27,
+    "estimatedTime": "15-20 minutes",
+    "lastUpdated": "2025-01-XX",
+    "version": "1.0",
+    "language": "en-IN",
+    "targetAudience": "Indian women with PCOS/PCOD or suspected PCOS/PCOD"
+  }
+}
