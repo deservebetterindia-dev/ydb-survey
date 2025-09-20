@@ -1,9 +1,19 @@
 'use client';
 
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const boldAccent = '#F50057'; // A vibrant, unmissable pink
+  const [showFirstText, setShowFirstText] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowFirstText(prev => !prev);
+    }, 3000); // Change text every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   const styles = `
     .card-hover-effect {
@@ -12,6 +22,13 @@ export default function Home() {
     .card-hover-effect:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .button-text-animation span {
+      transition: opacity 0.5s ease-in-out;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      text-align: center;
     }
   `;
 
@@ -32,21 +49,58 @@ export default function Home() {
         <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay for readability */}
         <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-left ml-4 sm:ml-8 lg:ml-16">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter mb-4">
-            Your Story Matters.
-          </h1>
+            Your <span style={{
+              background: `${boldAccent}`,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              padding: 5,
+            }}>Story </span> Matters
+            <span style={{
+              color: `${boldAccent}`
+            }}>.</span>
+          </h1> 
+          {/* <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter mb-4">
+            Your <span style={{
+              background: `linear-gradient(to right,#80ccff, ${boldAccent})`,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              padding: 5,
+            }}>Story </span> Matters
+            <span style={{
+              color: `${boldAccent}`
+            }}>.</span>
+          </h1>  */}
           <h2 className="mt-4 text-xl sm:text-1xl text-gray-200 font-light max-w-xl">
             Join the movement. Share your experience with PCOS and help us demand better healthcare for women in India.
           </h2>
           <div className="mt-10">
             <Link href="https://form.typeform.com/to/GQEOLs8X">
               <button 
-                className="font-bold py-4 px-10 sm:px-12 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
-                style={{ backgroundColor: boldAccent, color: 'white' }}
+                className="font-bold py-4 px-10 sm:px-12 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg relative"
+                style={{ backgroundColor: boldAccent, color: 'white', minHeight: '60px', width:'40%' }}
               >
-                Share Your Story
+                <div className="button-text-animation flex items-center justify-center">
+                  <span style={{ opacity: showFirstText ? 1 : 0 }}>Share Your Story</span>
+                  <span style={{color: `#d0d0d0`, opacity: !showFirstText ? 1 : 0 }}>Click here to fill up survey</span>
+                </div>
               </button>
             </Link>
+              {/* <h6 className="faded-text mt-2 mx-10 text-left text-xs">Click to fill up the above link</h6> */}
           </div>
+          {/* <div className="mt-10">
+            <Link href="https://form.typeform.com/to/GQEOLs8X">
+              <button 
+                className="font-bold py-4 px-10 sm:px-12 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg relative"
+                style={{ backgroundColor: boldAccent, color: 'white', minHeight: '60px' }}
+              >
+                <div className="button-text-animation">
+                  <span style={{ opacity: showFirstText ? 1 : 0 }}>Share Your Story</span>
+                  <span style={{ opacity: !showFirstText ? 1 : 0 }}>Click here to fill up survey</span>
+                </div>
+              </button>
+            </Link>
+              <h6 className="faded-text mt-2 mx-10 text-left text-xs">Click to fill up the above link</h6>
+          </div> */}
         </div>
       </section>
 

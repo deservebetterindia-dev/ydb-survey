@@ -64,3 +64,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, var(--pink-500), var(--lavender-500));
 }
+
+.faded-text {
+  opacity: 0.5;
+}
