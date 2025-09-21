@@ -2,6 +2,8 @@
 'use client';
 
 import { useState, useRef, useEffect, useMemo } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface FormData {
   [key: string]: string | string[] | number;
@@ -82,6 +84,9 @@ export default function Form() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
+    console.log('🔥 Form submission started');
+    console.log('📋 Form data:', formData);
+    
     if (!validateForm()) {
       alert('Please fill all required fields');
       return;
@@ -89,11 +94,30 @@ export default function Form() {
     
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      console.log('📡 Making API call to /api/submit-form');
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log('📨 API response status:', response.status);
+      const result = await response.json();
+      console.log('📄 API response data:', result);
+      
+      if (result.success) {
+        alert('Thank you for sharing your story! 💕');
+      } else {
+        alert('There was an error submitting your form. Please try again.');
+      }
+    } catch (error) {
+      console.error('💥 Submission error:', error);
+      alert('There was an error submitting your form. Please try again.');
+    }
     
-    console.log('Form data submitted:', formData);
-    alert('Thank you for sharing your story! 💕');
     setIsSubmitting(false);
   };
 
@@ -114,15 +138,36 @@ export default function Form() {
     <main className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50">
       {/* Sticky Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-pink-100">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-2xl">🌸</span>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-              You Deserve Better Survey
-            </h1>
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between gap-2">
+          {/* Left: Back Link */}
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            <Link href="/" className="flex items-center gap-1 sm:gap-2 text-slate-600 hover:text-slate-800 transition-colors">
+              <span className="text-xl sm:text-2xl">←</span>
+              <span className="font-semibold text-sm sm:text-base hidden sm:block">Back to Home</span>
+              <span className="font-semibold text-sm sm:hidden">Back</span>
+            </Link>
           </div>
-          <div className="text-sm font-medium text-gray-600">
-            {progress}% Complete
+
+          {/* Center: Logo (responsive container with Image fill) */}
+          <div className="flex-1 flex justify-center">
+            <div className="relative h-7 sm:h-9 md:h-10 w-28 sm:w-36 md:w-40">
+              <Image
+                src="/logo.png"
+                alt="You Deserve Better"
+                fill
+                priority
+                sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 160px"
+                className="object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Right: Progress */}
+          <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-600 flex-shrink-0">
+            <span className="hidden sm:inline">Progress</span>
+            <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-1 text-slate-700">
+              {progress}%
+            </span>
           </div>
         </div>
         <div className="w-full bg-gray-200 h-1">
