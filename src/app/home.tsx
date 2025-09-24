@@ -81,22 +81,30 @@ export default function Home() {
               >
                 {/* Animated Text */}
                 <span
-                  className={`absolute transition-opacity duration-500 ${
-                    showFirstText ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute transition-opacity duration-500 ${showFirstText ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
                   Share Your Story
                 </span>
                 <span
-                  className={`absolute text-gray-200 transition-opacity duration-500 ${
-                    !showFirstText ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute text-gray-200 transition-opacity duration-500 ${!showFirstText ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
                   Click here to fill the survey
                 </span>
                 {/* Shine effect */}
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent" style={{ animation: 'shine 2s infinite' }} />
               </button>
+            </Link>
+            <Link href="/blog">
+              <button className="relative font-semibold py-4 mt-2 px-8 sm:px-10 md:px-12 rounded-full shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center overflow-hidden"
+                style={{
+                  background: `linear-gradient(90deg, ${boldAccent}, #ff6b8a)`,
+                  color: 'white',
+                  minHeight: '60px',
+                  width: '100%',
+                  maxWidth: '320px',
+                }}>Watch other stories</button>
             </Link>
           </div>
         </div>
