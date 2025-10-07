@@ -65,7 +65,7 @@
             "options": [
               { "value": "single", "label": "Flying solo & loving it" },
               { "value": "married", "label": "Married & blessed" },
-              { "value": "divorced", "label": "Independent & strong" },
+              { "value": "divorced", "label": "Divorced & thriving" },
               { "value": "prefer-not", "label": "I'd rather not share" }
             ]
           },

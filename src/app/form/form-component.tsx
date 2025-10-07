@@ -303,18 +303,18 @@ export default function Form() {
                       )}
 
                       {question.type === 'checkbox' && (
-                        <div className={question.questionId === 'pledge' ? 'space-y-4' : 'grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3'}>
+                        <div className={question.questionId === 'pledge' ? 'space-y-4' : 'space-y-3'}>
                           {question.options?.map((option) => (
-                            <label key={option.value} className={`flex items-start p-4 sm:p-6 bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl border-2 border-pink-200 cursor-pointer transition-all hover:shadow-lg hover:border-pink-300 ${question.questionId === 'pledge' ? 'text-center justify-center' : ''}`}>
+                            <label key={option.value} className={`flex items-center p-3 sm:p-4 ${question.questionId === 'pledge' ? 'bg-gradient-to-r from-pink-50 to-purple-50 border-pink-200' : 'bg-slate-50 border-slate-200'} rounded-xl border-2 cursor-pointer transition-all hover:shadow-md hover:border-opacity-60`}>
                               <input
                                 type="checkbox"
                                 name={question.questionId}
                                 value={option.value}
                                 checked={formData[question.questionId]?.includes(option.value) || false}
                                 onChange={handleChange}
-                                className={`${question.questionId === 'pledge' ? 'mr-4 mt-1 scale-150' : 'mr-2 sm:mr-3 scale-110 sm:scale-125'} text-pink-600`}
+                                className={`mr-3 scale-110 ${question.questionId === 'pledge' ? 'text-pink-600' : 'text-blue-600'} flex-shrink-0`}
                               />
-                              <span className={`${question.questionId === 'pledge' ? 'text-gray-800 text-lg sm:text-xl font-semibold leading-relaxed' : 'text-slate-700 text-sm sm:text-base'}`}>
+                              <span className={`${question.questionId === 'pledge' ? 'text-gray-800 text-base sm:text-lg font-semibold' : 'text-slate-700 text-sm sm:text-base'}`}>
                                 {option.label.replace('{NAME}', formData['name'] || '[Your Name]')}
                               </span>
                             </label>
