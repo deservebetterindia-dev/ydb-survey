@@ -12,12 +12,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = "width=device-width, initial-scale=1";
+
 export const metadata: Metadata = {
-  title: "Wellness - Your Journey to Better Health",
-  description: "Personalized wellness solutions designed for women. Share your story and connect with a supportive community.",
-  keywords: "wellness, women health, personalized care, holistic health, community support",
-  authors: [{ name: "Wellness Team" }],
-  viewport: "width=device-width, initial-scale=1",
+  title: "PCOS Survey - Share Your Story | You Deserve Better",
+  description: "Join thousands of Indian women sharing their PCOS journey. Take our survey and get access to PCOS resources, health tips, and community support directly in your email.",
+  keywords: "PCOS survey, PCOD India, women health survey, PCOS symptoms, PCOS treatment, Indian women PCOS, PCOS support community, PCOS resources, hormonal health, reproductive health",
+  authors: [{ name: "You Deserve Better Team" }],
+  openGraph: {
+    title: "PCOS Survey - Share Your Story | You Deserve Better",
+    description: "Join thousands of Indian women sharing their PCOS journey. Get PCOS resources and support.",
+    type: "website",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PCOS Survey - Share Your Story",
+    description: "Join thousands of Indian women sharing their PCOS journey. Get PCOS resources and support.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

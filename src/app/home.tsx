@@ -20,10 +20,10 @@ export default function Home() {
       <section className="relative flex items-center min-h-screen px-4 sm:px-10 lg:px-20">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-right sm:bg-center"
+          className="absolute inset-0 bg-cover"
           style={{
             backgroundImage: 'url(/landingBg.jpeg)',
-            backgroundPosition: '80% center', // shift slightly right on mobile
+            backgroundPosition: '70% center', // shift more right on xs/small screens
           }}
         ></div>
 
@@ -95,16 +95,6 @@ export default function Home() {
                 {/* Shine effect */}
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent" style={{ animation: 'shine 2s infinite' }} />
               </button>
-            </Link>
-            <Link href="/blog">
-              <button className="relative font-semibold py-4 mt-2 px-8 sm:px-10 md:px-12 rounded-full shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center overflow-hidden"
-                style={{
-                  background: `linear-gradient(90deg, ${boldAccent}, #ff6b8a)`,
-                  color: 'white',
-                  minHeight: '60px',
-                  width: '100%',
-                  maxWidth: '320px',
-                }}>Watch other stories</button>
             </Link>
           </div>
         </div>

@@ -68,3 +68,28 @@ html {
 .faded-text {
   opacity: 0.5;
 }
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Ensure minimum touch targets */
+  button, input, select, textarea, label {
+    min-height: 44px;
+  }
+
+  /* Better form input spacing on mobile */
+  input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  /* Improve checkbox and radio button sizes */
+  input[type="checkbox"], input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  /* Better spacing for form sections */
+  .form-section {
+    margin-bottom: 1rem;
+  }
+}

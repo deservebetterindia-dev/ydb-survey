@@ -79,7 +79,7 @@ export default function Form() {
       
       if (result.success) {
         console.log('✅ Form submitted successfully');
-        router.push('/form/thank-you');
+        router.push('/form/thank-you?submitted=true');
       } else {
         console.error('❌ Form submission failed:', result.error);
         alert('There was an error submitting your form. Please try again.');
@@ -112,33 +112,31 @@ export default function Form() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Sticky Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between gap-3">
           {/* Left: Back Link */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            <Link href="/" className="flex items-center gap-1 sm:gap-2 text-slate-600 hover:text-slate-800 transition-colors">
-              <span className="text-xl sm:text-2xl">←</span>
-              <span className="font-semibold text-sm sm:text-base hidden sm:block">Back to Home</span>
-              <span className="font-semibold text-sm sm:hidden">Back</span>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <Link href="/" className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors">
+              <span className="text-xl">←</span>
+              <span className="font-semibold text-sm hidden xs:block">Back</span>
             </Link>
           </div>
 
-          {/* Center: Logo (responsive container with Image fill) */}
+          {/* Center: Logo */}
           <div className="flex-1 flex justify-center">
-            <div className="relative h-7 sm:h-9 md:h-10 w-28 sm:w-36 md:w-40">
+            <div className="relative h-8 w-32">
               <Image
                 src="/logo.png"
                 alt="You Deserve Better"
                 fill
                 priority
-                sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 160px"
+                sizes="128px"
                 className="object-contain"
               />
             </div>
           </div>
 
           {/* Right: Progress */}
-          <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-600 flex-shrink-0">
-            <span className="hidden sm:inline">Progress</span>
+          <div className="flex items-center gap-2 text-xs font-medium text-slate-600 flex-shrink-0">
             <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-1 text-slate-700">
               {progress}%
             </span>
@@ -154,9 +152,7 @@ export default function Form() {
         </div>
       </header>
 
-
-
-      <div className="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+      <div className="max-w-3xl lg:max-w-6xl xl:max-w-7xl mx-auto p-3 sm:p-6 lg:p-8">
         {/* Step Progress */}
         <div className="mb-6 sm:mb-8 bg-white/95 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-lg border border-slate-200">
           <div className="flex items-center justify-between mb-4">
@@ -209,7 +205,7 @@ export default function Form() {
             const colors = sectionColors[currentStep % sectionColors.length];
 
             return (
-              <div className={`bg-white/95 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg border-l-4 ${colors.border} min-h-[400px] sm:min-h-[500px] border border-slate-200`}>
+              <div className={`bg-white/95 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg border-l-4 ${colors.border} ${currentStep > 1 ? 'min-h-[400px] sm:min-h-[500px]' : ''} border border-slate-200`}>
                 <div className="mb-6 sm:mb-8">
                   <div className="flex items-center gap-2 sm:gap-3 mb-4">
                     <span className={`${colors.bg} p-2 sm:p-3 rounded-full text-base sm:text-lg`}>📋</span>
@@ -233,7 +229,7 @@ export default function Form() {
                           name={question.questionId}
                           value={formData[question.questionId] || ''}
                           onChange={handleChange}
-                          className="w-full p-3 sm:p-4 border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all text-base sm:text-lg bg-white text-slate-800 placeholder-slate-400"
+                          className="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all text-base bg-white text-slate-800 placeholder-slate-400"
                           required={question.required}
                           placeholder={question.placeholder}
                         />
@@ -307,18 +303,20 @@ export default function Form() {
                       )}
 
                       {question.type === 'checkbox' && (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                        <div className={question.questionId === 'pledge' ? 'space-y-4' : 'grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3'}>
                           {question.options?.map((option) => (
-                            <label key={option.value} className={`flex items-center p-2 sm:p-3 bg-slate-50 rounded-xl border-2 ${colors.hover} cursor-pointer transition-all hover:shadow-md`}>
+                            <label key={option.value} className={`flex items-start p-4 sm:p-6 bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl border-2 border-pink-200 cursor-pointer transition-all hover:shadow-lg hover:border-pink-300 ${question.questionId === 'pledge' ? 'text-center justify-center' : ''}`}>
                               <input
                                 type="checkbox"
                                 name={question.questionId}
                                 value={option.value}
                                 checked={formData[question.questionId]?.includes(option.value) || false}
                                 onChange={handleChange}
-                                className={`mr-2 sm:mr-3 scale-110 sm:scale-125 ${colors.accent}`}
+                                className={`${question.questionId === 'pledge' ? 'mr-4 mt-1 scale-150' : 'mr-2 sm:mr-3 scale-110 sm:scale-125'} text-pink-600`}
                               />
-                              <span className="text-slate-700 text-sm sm:text-base">{option.label}</span>
+                              <span className={`${question.questionId === 'pledge' ? 'text-gray-800 text-lg sm:text-xl font-semibold leading-relaxed' : 'text-slate-700 text-sm sm:text-base'}`}>
+                                {option.label.replace('{NAME}', formData['name'] || '[Your Name]')}
+                              </span>
                             </label>
                           ))}
                         </div>
@@ -351,6 +349,16 @@ export default function Form() {
                           </div>
                         </div>
                       )}
+
+                      {question.type === 'display' && (
+                        <div className="bg-gradient-to-r from-pink-50 to-purple-50 p-6 sm:p-8 rounded-xl border-2 border-pink-200">
+                          <div className="text-center">
+                            <p className="text-lg sm:text-xl font-semibold text-gray-800 leading-relaxed">
+                              {question.content?.replace('{NAME}', formData['name'] || '[Your Name]')}
+                            </p>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -359,19 +367,19 @@ export default function Form() {
           })()}
 
           {/* Navigation Buttons */}
-          <div className="flex flex-col sm:flex-row justify-between items-center pt-6 sm:pt-8 gap-4 sm:gap-0">
+          <div className="flex justify-between items-center pt-4 gap-3">
             <button
               type="button"
               onClick={prevStep}
               disabled={currentStep === 0}
-              className="bg-slate-500 text-white font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-full hover:bg-slate-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 text-sm sm:text-base order-2 sm:order-1"
+              className="bg-slate-500 text-white font-medium py-2 px-4 rounded-full hover:bg-slate-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 text-sm"
             >
               ← Previous
             </button>
 
-            <div className="text-center order-1 sm:order-2">
+            <div className="text-center flex-1">
               <p className="text-slate-600 text-sm">Step {currentStep + 1} of {totalSteps}</p>
-              <p className="text-slate-500 text-xs">Estimated time: {surveyData.metadata.estimatedTime}</p>
+              <p className="text-slate-500 text-xs">1-2 mins</p>
             </div>
 
             {currentStep === totalSteps - 1 ? (
@@ -379,17 +387,15 @@ export default function Form() {
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 flex items-center gap-2 text-sm sm:text-base order-3"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-2 px-4 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg disabled:opacity-50 flex items-center gap-2 text-sm"
               >
                 {isSubmitting ? (
                   <>
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                    Submitting...
+                    Submit
                   </>
                 ) : (
-                  <>
-                    ✨ Submit Your Story 💕
-                  </>
+                  'Submit Story'
                 )}
               </button>
             ) : (
@@ -397,7 +403,7 @@ export default function Form() {
                 type="button"
                 onClick={nextStep}
                 disabled={!isCurrentStepValid()}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base order-3"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium py-2 px-4 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
               >
                 Next →
               </button>

@@ -84,8 +84,6 @@ export default function Form() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    console.log('🔥 Form submission started');
-    console.log('📋 Form data:', formData);
     
     if (!validateForm()) {
       alert('Please fill all required fields');
@@ -95,7 +93,6 @@ export default function Form() {
     setIsSubmitting(true);
     
     try {
-      console.log('📡 Making API call to /api/submit-form');
       const response = await fetch('/api/submit-form', {
         method: 'POST',
         headers: {
@@ -138,32 +135,32 @@ export default function Form() {
     <main className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50">
       {/* Sticky Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-pink-100">
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between gap-2">
+        <div className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-4 flex items-center justify-between gap-1 sm:gap-2">
           {/* Left: Back Link */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            <Link href="/" className="flex items-center gap-1 sm:gap-2 text-slate-600 hover:text-slate-800 transition-colors">
-              <span className="text-xl sm:text-2xl">←</span>
-              <span className="font-semibold text-sm sm:text-base hidden sm:block">Back to Home</span>
+          <div className="flex items-center gap-1 sm:gap-3 flex-shrink-0">
+            <Link href="/" className="flex items-center gap-1 text-slate-600 hover:text-slate-800 transition-colors">
+              <span className="text-lg sm:text-2xl">←</span>
+              <span className="font-semibold text-sm hidden sm:block">Back to Home</span>
               <span className="font-semibold text-sm sm:hidden">Back</span>
             </Link>
           </div>
 
           {/* Center: Logo (responsive container with Image fill) */}
           <div className="flex-1 flex justify-center">
-            <div className="relative h-7 sm:h-9 md:h-10 w-28 sm:w-36 md:w-40">
+            <div className="relative h-6 sm:h-9 md:h-10 w-24 sm:w-36 md:w-40">
               <Image
                 src="/logo.png"
                 alt="You Deserve Better"
                 fill
                 priority
-                sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 160px"
+                sizes="(max-width: 640px) 96px, (max-width: 768px) 144px, 160px"
                 className="object-contain"
               />
             </div>
           </div>
 
           {/* Right: Progress */}
-          <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-600 flex-shrink-0">
+          <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-medium text-slate-600 flex-shrink-0">
             <span className="hidden sm:inline">Progress</span>
             <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-1 text-slate-700">
               {progress}%
@@ -171,23 +168,23 @@ export default function Form() {
           </div>
         </div>
         <div className="w-full bg-gray-200 h-1">
-          <div 
-            className="bg-gradient-to-r from-pink-500 to-purple-500 h-1 transition-all duration-500" 
+          <div
+            className="bg-gradient-to-r from-pink-500 to-purple-500 h-1 transition-all duration-500"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
       </header>
 
-      <div className="max-w-4xl mx-auto p-4 md:p-6">
+      <div className="max-w-4xl mx-auto p-3 sm:p-4 md:p-6">
         {/* Hero Section */}
-        <section className="text-center py-12 mb-8">
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-pink-100">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        <section className="text-center py-8 sm:py-12 mb-6 sm:mb-8">
+          <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-xl border border-pink-100">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
               Your Story, Your Strength, Your Community
             </h2>
-            <p className="text-lg text-gray-600 mb-6">Together We Rise, Together We Heal ✨</p>
-            <div className="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-2xl">
-              <p className="font-bold text-pink-600 text-xl">
+            <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">Together We Rise, Together We Heal ✨</p>
+            <div className="bg-gradient-to-r from-pink-50 to-purple-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl">
+              <p className="font-bold text-pink-600 text-base sm:text-lg md:text-xl">
                 🦋 You are not broken. You are not less than. You are beautifully, uniquely you. 🦋
               </p>
             </div>
@@ -195,31 +192,31 @@ export default function Form() {
         </section>
 
         {/* Quick Stats */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-pink-100 to-rose-100 p-4 rounded-xl shadow-md text-center">
-            <span className="text-pink-600 text-3xl font-bold block">1 in 5</span>
-            <p className="text-gray-700 text-sm">Indian women have PCOS</p>
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+          <div className="bg-gradient-to-br from-pink-100 to-rose-100 p-3 sm:p-4 rounded-xl shadow-md text-center">
+            <span className="text-pink-600 text-2xl sm:text-3xl font-bold block">1 in 5</span>
+            <p className="text-gray-700 text-xs sm:text-sm">Indian women have PCOS</p>
           </div>
-          <div className="bg-gradient-to-br from-purple-100 to-pink-100 p-4 rounded-xl shadow-md text-center">
-            <span className="text-purple-600 text-3xl font-bold block">70%</span>
-            <p className="text-gray-700 text-sm">Never get proper diagnosis</p>
+          <div className="bg-gradient-to-br from-purple-100 to-pink-100 p-3 sm:p-4 rounded-xl shadow-md text-center">
+            <span className="text-purple-600 text-2xl sm:text-3xl font-bold block">70%</span>
+            <p className="text-gray-700 text-xs sm:text-sm">Never get proper diagnosis</p>
           </div>
-          <div className="bg-gradient-to-br from-rose-100 to-purple-100 p-4 rounded-xl shadow-md text-center">
-            <span className="text-rose-600 text-3xl font-bold block">22.5%</span>
-            <p className="text-gray-700 text-sm">Prevalence growing</p>
+          <div className="bg-gradient-to-br from-rose-100 to-purple-100 p-3 sm:p-4 rounded-xl shadow-md text-center sm:col-span-2 md:col-span-1">
+            <span className="text-rose-600 text-2xl sm:text-3xl font-bold block">22.5%</span>
+            <p className="text-gray-700 text-xs sm:text-sm">Prevalence growing</p>
           </div>
         </section>
 
         {/* Section Navigation */}
-        <div className="mb-8 bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-lg">
-          <div className="flex flex-wrap justify-center gap-2">
+        <div className="mb-6 sm:mb-8 bg-white/80 backdrop-blur-sm p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {[1, 2, 3, 4, 5].map(section => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                  currentSection === section 
-                    ? 'bg-pink-500 text-white shadow-lg' 
+                className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
+                  currentSection === section
+                    ? 'bg-pink-500 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-600 hover:bg-pink-100'
                 }`}
               >
@@ -229,103 +226,103 @@ export default function Form() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
           {/* Section 1 */}
-          <div 
-            id="section-1" 
+          <div
+            id="section-1"
             ref={(el) => assignSectionRef(1, el)}
-            className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border-l-4 border-pink-400"
+            className="bg-white/90 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border-l-4 border-pink-400"
           >
-            <h3 className="text-xl font-bold text-pink-600 mb-6 flex items-center gap-2">
-              <span className="bg-pink-100 p-2 rounded-full text-sm">🌸</span>
+            <h3 className="text-lg sm:text-xl font-bold text-pink-600 mb-4 sm:mb-6 flex items-center gap-2">
+              <span className="bg-pink-100 p-1.5 sm:p-2 rounded-full text-xs sm:text-sm">🌸</span>
               1. Getting to Know You
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
               <div>
-                <label className="block text-gray-700 font-medium mb-2">Life Stage *</label>
-                <input 
-                  type="text" 
-                  name="lifeStage" 
-                  onChange={handleChange} 
-                  className="w-full p-3 border border-pink-200 rounded-lg focus:border-pink-400 focus:ring-1 focus:ring-pink-200 transition-all" 
-                  required 
-                  placeholder="Early twenties..." 
+                <label className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">Life Stage *</label>
+                <input
+                  type="text"
+                  name="lifeStage"
+                  onChange={handleChange}
+                  className="w-full p-3 sm:p-3 border border-pink-200 rounded-lg focus:border-pink-400 focus:ring-1 focus:ring-pink-200 transition-all text-sm sm:text-base"
+                  required
+                  placeholder="Early twenties..."
                 />
-                {errors.lifeStage && <p className="text-red-500 text-sm mt-1">{errors.lifeStage}</p>}
+                {errors.lifeStage && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.lifeStage}</p>}
               </div>
               <div>
-                <label className="block text-gray-700 font-medium mb-2">Location *</label>
-                <input 
-                  type="text" 
-                  name="homeLocation" 
-                  onChange={handleChange} 
-                  className="w-full p-3 border border-pink-200 rounded-lg focus:border-pink-400 focus:ring-1 focus:ring-pink-200 transition-all" 
-                  required 
-                  placeholder="Mumbai, Delhi..." 
+                <label className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">Location *</label>
+                <input
+                  type="text"
+                  name="homeLocation"
+                  onChange={handleChange}
+                  className="w-full p-3 sm:p-3 border border-pink-200 rounded-lg focus:border-pink-400 focus:ring-1 focus:ring-pink-200 transition-all text-sm sm:text-base"
+                  required
+                  placeholder="Mumbai, Delhi..."
                 />
-                {errors.homeLocation && <p className="text-red-500 text-sm mt-1">{errors.homeLocation}</p>}
+                {errors.homeLocation && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.homeLocation}</p>}
               </div>
             </div>
 
-            <div className="mb-6">
-              <label className="block text-gray-700 font-medium mb-3">Relationship Status *</label>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div className="mb-4 sm:mb-6">
+              <label className="block text-gray-700 font-medium mb-3 text-sm sm:text-base">Relationship Status *</label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {['Flying solo & loving it', 'Married & blessed', 'Independent & strong', "I&apos;d rather not share"].map(option => (
-                  <label key={option} className="flex items-center p-3 bg-gray-50 rounded-lg border hover:border-pink-300 cursor-pointer transition-all">
-                    <input 
-                      type="radio" 
-                      name="relationshipStatus" 
-                      value={option} 
-                      onChange={handleChange} 
-                      className="mr-3 text-pink-500" 
-                      required 
+                  <label key={option} className="flex items-center p-2.5 sm:p-3 bg-gray-50 rounded-lg border hover:border-pink-300 cursor-pointer transition-all">
+                    <input
+                      type="radio"
+                      name="relationshipStatus"
+                      value={option}
+                      onChange={handleChange}
+                      className="mr-2 sm:mr-3 text-pink-500 w-4 h-4"
+                      required
                     />
-                    <span className="text-gray-700">{option}</span>
+                    <span className="text-gray-700 text-sm sm:text-base">{option}</span>
                   </label>
                 ))}
               </div>
-              {errors.relationshipStatus && <p className="text-red-500 text-sm mt-1">{errors.relationshipStatus}</p>}
+              {errors.relationshipStatus && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.relationshipStatus}</p>}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
               <div>
-                <label className="block text-gray-700 font-medium mb-2">Education Journey *</label>
-                <input 
-                  type="text" 
-                  name="education" 
-                  onChange={handleChange} 
-                  className="w-full p-3 border border-pink-200 rounded-lg focus:border-pink-400 focus:ring-1 focus:ring-pink-200 transition-all" 
-                  required 
-                  placeholder="Bachelor's degree..." 
+                <label className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">Education Journey *</label>
+                <input
+                  type="text"
+                  name="education"
+                  onChange={handleChange}
+                  className="w-full p-3 sm:p-3 border border-pink-200 rounded-lg focus:border-pink-400 focus:ring-1 focus:ring-pink-200 transition-all text-sm sm:text-base"
+                  required
+                  placeholder="Bachelor's degree..."
                 />
-                {errors.education && <p className="text-red-500 text-sm mt-1">{errors.education}</p>}
+                {errors.education && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.education}</p>}
               </div>
               <div>
-                <label className="block text-gray-700 font-medium mb-2">How do you spend your days? *</label>
-                <input 
-                  type="text" 
-                  name="dailyActivities" 
-                  onChange={handleChange} 
-                  className="w-full p-3 border border-pink-200 rounded-lg focus:border-pink-400 focus:ring-1 focus:ring-pink-200 transition-all" 
-                  required 
-                  placeholder="Working professional..." 
+                <label className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">How do you spend your days? *</label>
+                <input
+                  type="text"
+                  name="dailyActivities"
+                  onChange={handleChange}
+                  className="w-full p-3 sm:p-3 border border-pink-200 rounded-lg focus:border-pink-400 focus:ring-1 focus:ring-pink-200 transition-all text-sm sm:text-base"
+                  required
+                  placeholder="Working professional..."
                 />
-                {errors.dailyActivities && <p className="text-red-500 text-sm mt-1">{errors.dailyActivities}</p>}
+                {errors.dailyActivities && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.dailyActivities}</p>}
               </div>
             </div>
 
             <div>
-              <label className="block text-gray-700 font-medium mb-2">Your family&apos;s monthly income range *</label>
-              <input 
-                type="text" 
-                name="incomeRange" 
-                onChange={handleChange} 
-                className="w-full p-3 border border-pink-200 rounded-lg focus:border-pink-400 focus:ring-1 focus:ring-pink-200 transition-all" 
-                required 
-                placeholder="₹25,000-50,000..." 
+              <label className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">Your family&apos;s monthly income range *</label>
+              <input
+                type="text"
+                name="incomeRange"
+                onChange={handleChange}
+                className="w-full p-3 sm:p-3 border border-pink-200 rounded-lg focus:border-pink-400 focus:ring-1 focus:ring-pink-200 transition-all text-sm sm:text-base"
+                required
+                placeholder="₹25,000-50,000..."
               />
-              {errors.incomeRange && <p className="text-red-500 text-sm mt-1">{errors.incomeRange}</p>}
+              {errors.incomeRange && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.incomeRange}</p>}
             </div>
           </div>
 
@@ -552,11 +549,11 @@ export default function Form() {
           </div>
 
           {/* Submit Button */}
-          <div className="text-center pt-6">
-            <button 
-              type="submit" 
+          <div className="text-center pt-4 sm:pt-6">
+            <button
+              type="submit"
               disabled={isSubmitting}
-              className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold py-3 px-8 rounded-full hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 flex items-center gap-2 mx-auto"
+              className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold py-3 px-6 sm:px-8 rounded-full hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 flex items-center justify-center gap-2 mx-auto min-h-[48px] w-full max-w-xs sm:max-w-sm text-sm sm:text-base"
             >
               {isSubmitting ? (
                 <>
@@ -569,7 +566,7 @@ export default function Form() {
                 </>
               )}
             </button>
-            <p className="mt-3 text-gray-600 text-sm">Your story helps other sisters 🌸</p>
+            <p className="mt-3 text-gray-600 text-xs sm:text-sm">Your story helps other sisters 🌸</p>
           </div>
         </form>
       </div>

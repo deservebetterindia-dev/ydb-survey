@@ -4,6 +4,34 @@
     "sections": [
       {
         "sectionId": 1,
+        "sectionTitle": "Welcome, Beautiful Soul",
+        "questions": [
+          {
+            "questionId": "name",
+            "question": "What should we call you?",
+            "required": true,
+            "type": "text",
+            "placeholder": "Enter your name or preferred name"
+          }
+        ]
+      },
+      {
+        "sectionId": 2,
+        "sectionTitle": "Your Pledge of Strength",
+        "questions": [
+          {
+            "questionId": "pledge",
+            "question": "Your Personal Commitment",
+            "required": true,
+            "type": "checkbox",
+            "options": [
+              { "value": "confirmed", "label": "I {NAME} pledge to regain my health & confidence against all odds of PCOS/PCOD. Contributing to this survey is my first step towards the goal." }
+            ]
+          }
+        ]
+      },
+      {
+        "sectionId": 3,
         "sectionTitle": "Getting to Know the Beautiful You",
         "questions": [
           {
@@ -86,7 +114,7 @@
         ]
       },
       {
-        "sectionId": 2,
+        "sectionId": 4,
         "sectionTitle": "Your PCOS Discovery Story",
         "questions": [
           {
@@ -150,7 +178,7 @@
         ]
       },
       {
-        "sectionId": 3,
+        "sectionId": 5,
         "sectionTitle": "How PCOS Shows Up in Your Beautiful Life",
         "questions": [
           {
@@ -207,11 +235,11 @@
           },
           {
             "questionId": "relationshipImpact",
-            "question": "How has this affected your relationships and social life? (Select all that apply)",
+            "question": "How has this affected your relationship and social life? (Select all that apply)",
             "required": false,
             "type": "checkbox",
             "options": [
-              { "value": "strained-romantic", "label": "My romantic relationships have been affected" },
+              { "value": "strained-romantic", "label": "My romantic relationship have been affected" },
               { "value": "avoided-dating", "label": "I avoid dating or new relationships" },
               { "value": "family-misunderstanding", "label": "My family doesn't fully understand" },
               { "value": "friends-dismissive", "label": "Friends sometimes dismiss my concerns" },
@@ -223,7 +251,7 @@
         ]
       },
       {
-        "sectionId": 4,
+        "sectionId": 6,
         "sectionTitle": "Your Healing & Wellness Journey",
         "questions": [
           {
@@ -294,7 +322,7 @@
         ]
       },
       {
-        "sectionId": 5,
+        "sectionId": 7,
         "sectionTitle": "Your Personal Story Timeline",
         "questions": [
           {
@@ -360,7 +388,7 @@
         ]
       },
       {
-        "sectionId": 6,
+        "sectionId": 8,
         "sectionTitle": "Dreams, Support & Information Needs",
         "questions": [
           {
@@ -451,10 +479,10 @@
           },
           {
             "questionId": "contactEmail",
-            "question": "If you'd like to stay connected and receive updates about resources and community initiatives (completely optional):",
+            "question": "Enter the email on which yould like to receive resources",
             "required": false,
             "type": "email",
-            "placeholder": "your.email@example.com"
+            "placeholder": "Enter your email to stay connected"
           },
           {
             "questionId": "shareStory",
@@ -474,7 +502,7 @@
   },
   "metadata": {
     "totalQuestions": 27,
-    "estimatedTime": "15-20 minutes",
+    "estimatedTime": "1-2 minutes",
     "lastUpdated": "2025-01-XX",
     "version": "1.0",
     "language": "en-IN",
